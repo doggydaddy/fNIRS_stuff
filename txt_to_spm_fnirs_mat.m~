@@ -54,20 +54,24 @@ acoef = rand(2, 2);
 dpf = rand(1, 2);
 
 P = struct('wav', wav, 'fs', fs, 'fname', fname, 'base', base, 'mask', mask, 'nch', nch, 'ns', ns, 'age', age, 'd', d, 'acoef', acoef, 'dpf', dpf);
-
-output_filename = input('Enter output filename: ', 's');
-P.fname.raw.Y = strcat(input_filepath, output_filename, '.mat');
-P.fname.nirs = P.fname.raw.Y;
-
 save('P.mat', 'P');
 
+output_filename = input('Enter output filename: ', 's');
+P.fname.raw.Y = strcat(input_filepath, otuput_filename)
+
 % clear workspace and only load the two structs
+%clear all;
 load('P.mat');
 load('Y.mat');
+
 % saving final output
 save(output_filename, 'P', 'Y');
 
 % final cleanup
 delete P.mat;
 delete Y.mat;
-clear all;
+load(output_filename);
+%clear output_filename;
+
+% change name references to the current mat filename
+P.fname.raw.Y = 
