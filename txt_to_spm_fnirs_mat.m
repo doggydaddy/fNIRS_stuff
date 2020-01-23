@@ -19,7 +19,7 @@ Y = struct('od', od, 'hbo', hbo, 'hbr', hbr, 'hbt', hbt);
 save('Y.mat', 'Y');
 % construct P (header)
 % Notes: From what I can gather:
-% wave <- 1x2 int; do not konw what this means
+% wave <- 1x2 int; std wavelengths of the two Hbs [695, 830]
 % fs <- int; do not know what it means
 % fname <- struct; file name
 %   raw <- struct
@@ -31,10 +31,10 @@ save('Y.mat', 'Y');
 % nch <- int; number of channels
 % ns <- int; number of time points (nt)
 % age <- int; age (must be specified manually I suppose
-% d <- int; ?
-% acoef <- 2x2 flaot; conversion coefficents I suppose, leave empty for now
-% dpf <- 1x2 float; I don't know what this is, so leave empty for now
-wav = zeros(1, 2);
+% d <- int; distance, but what distance? Set to 2.5
+% acoef <- 2x2 flaot; conversion coefficents I suppose, randomly generated
+% dpf <- 1x2 float; I don't know what this is, randomly generated
+wav = [695, 830];
 fs = 0;
 
  % this might not be correct, but what is the valid Hb tag?
@@ -49,7 +49,7 @@ base = [1, 100]; % not sure if this is correct either
 mask = ones(1, nch);
 ns = nt;
 age = str2double(input('Enter age: ','s'));
-d = 0;
+d = 2.5;
 acoef = rand(2, 2);
 dpf = rand(1, 2);
 
