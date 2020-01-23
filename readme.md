@@ -21,6 +21,7 @@ Some fields in the Y and P structs will be mising because input txt data is
 assumed to be already converted to Hb and not light intensity.
 
 P -> fname -> raw -> type = 'Light Intensity' is therefore wrong?
+
 Y -> od is empty.
 
 Malso any fields in the header (P) struct is randomly filled partly due to the
@@ -29,10 +30,15 @@ conversion LI -> Hb and hence I assume will not be used again throughout the
 rest of the processing pipline. They are as follows:
 
 P -> wav 1x2 int : I don't know what this does, currently zeros
+
 P -> fs int : I don't know what this does, currently zero
+
 P -> base 1x2 int : value range perhaps, but not for Hb... fixed to [1, 100] atm. 
+
 P -> d : No clue.... currently zero too.
+
 P -> acoef 2x2 float : Conversion coefficients. Currently randomly generated 2x2 
+
 P -> dpf 1x2 float: Possibly also conversion coef. Not sure. Also randomly generated.
 
 The hope is that none of these parameters are actually used for further
