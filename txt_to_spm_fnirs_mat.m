@@ -35,7 +35,7 @@ save('Y.mat', 'Y');
 % acoef <- 2x2 flaot; conversion coefficents I suppose, randomly generated
 % dpf <- 1x2 float; I don't know what this is, randomly generated
 wav = [695, 830];
-fs = 0;
+fs = 10; % changed to 10 instead of 0, still not sure what it does though.
 
  % this might not be correct, but what is the valid Hb tag?
 type = 'Light Intensity';
