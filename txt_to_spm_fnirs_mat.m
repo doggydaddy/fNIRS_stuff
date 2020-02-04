@@ -8,12 +8,12 @@ input_data = readmatrix(input_filename);
 input_data = rmmissing(input_data, 2);
 
 nt = size(input_data, 1);
-nr_channels = size(input_data, 2) / 2;
+nr_channels = 16; % hardcode number of channels 
 
 % construct Y (data)
 od = zeros(nt, nr_channels, 2);
-hbo = input_data(:, 1:2:end);
-hbr = input_data(:, 2:2:end);
+hbo = input_data(:, 5:2:end); % ignore columns 1-4 (HRV, EDA, DIG1, DIG2)
+hbr = input_data(:, 6:2:end);
 hbt = hbo + hbr;
 Y = struct('od', od, 'hbo', hbo, 'hbr', hbr, 'hbt', hbt);
 save('Y.mat', 'Y');
