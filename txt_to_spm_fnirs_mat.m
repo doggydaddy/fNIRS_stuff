@@ -35,7 +35,7 @@ save('Y.mat', 'Y');
 % acoef <- 2x2 flaot; conversion coefficents I suppose, randomly generated
 % dpf <- 1x2 float; I don't know what this is, randomly generated
 wav = [695, 830];
-fs = 10; % changed to 10 instead of 0, still not sure what it does though.
+fs = 125; % changed to 125 instead of 10-> this is the sampling frequency
 
  % this might not be correct, but what is the valid Hb tag?
 type = 'Light Intensity';
@@ -45,7 +45,7 @@ raw = struct('Y', Y, 'type', type);
 fname = struct('raw', raw, 'nirs', nirs);
 
 nch = nr_channels;
-base = [1, 100]; % not sure if this is correct either
+base = [1, 100]; % not sure if this is correct either - I checked with very different values and get the exact same results so it shouldnt matter/Myrto
 mask = ones(1, nch);
 ns = nt;
 age = str2double(input('Enter age: ','s'));
