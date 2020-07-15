@@ -1,0 +1,7 @@
+2020-05-19:
+Results are rather disappointing, and I don't know exactly what I can do to
+drastically improve results.  Things that I can try.
+
+1) Redo datastore to tabularTextDatastore, in order not to lose resolution.  
+2) Add dropout layer to compensate for unbalanced data.
+3) In case of rare events, autoencoders might do!
